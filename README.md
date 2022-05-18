@@ -2,7 +2,7 @@
 Simple Captive Portal for the ESP8266 which is also used in the NodeMCUs for example!
 
 ## How to install?
-### Method #3
+### Method #1
 - Download and install platformio CLI (also set shell variables)
 - Build in the IDE of your choice i guess.
 
