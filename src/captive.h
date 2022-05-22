@@ -5,6 +5,7 @@
 #include <LittleFS.h>
 #include "html.h"
 #include "utils.h"
+#include "config.h"
 
 ESP8266WebServer webServer(80);
 DNSServer dnsServer;
@@ -13,7 +14,7 @@ IPAddress apIP(69, 69, 69, 1);
 const uint16_t DNS_PORT = 53;
 
 void requireAuthentication() {
-  if (!webServer.authenticate("admin", "123456"))
+  if (!webServer.authenticate(ADMIN_USER, ADMIN_PW))
 	return webServer.requestAuthentication();
 }
 
@@ -23,7 +24,7 @@ void setupCaptive() {
 
   WiFi.mode(WIFI_AP);
   WiFi.softAPConfig(apIP, apIP, IPAddress(255, 255, 255, 0));
-  WiFi.softAP("gopfetami", "");
+  WiFi.softAP(SSID, WIFI_PW);
   dnsServer.start(DNS_PORT, "*", apIP);
 
   webServer.onNotFound([]() {
