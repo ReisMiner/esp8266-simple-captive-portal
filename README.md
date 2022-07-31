@@ -13,6 +13,7 @@ This involves the arduino IDE, so go download and install it.
 - Rename the *src* folder to *main*
 - rename *main.cpp* to *main.ino*
 - open the file in the arduino IDE
+- go to file -> preferences and enter this url ``http://arduino.esp8266.com/stable/package_esp8266com_index.json`` where it says "additional board manager URLS"
 - go to Tools-> Board: -> Bord Manager and install the ESP8266 board. Then Select your specific model under Tools -> Board -> ESP8266
 - Flash
 - Enjoy
